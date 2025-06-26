@@ -1,1 +1,1 @@
-A simple CRUD using backend (mongodB)
+A simple backend CRUD application using MongoDB
