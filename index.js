@@ -20,6 +20,18 @@ app.get('/', (req, res) => {
     res.send("This is from backend updated")
 })
 
+
+mongoose.connect("Your connection String")
+    .then(() => {
+        console.log("connected to database");
+        app.listen(3000,()=>{
+        console.log("Server is running on port 3000")
+        })
+    })
+    .catch(() => {
+        console.log("not connected to database")
+    })
+
 // //get
 // app.get('/api/products', async (req, res) => {
 //     try {
@@ -77,18 +89,6 @@ app.get('/', (req, res) => {
 //         res.status(500).json({message:error.message});
 //     }
 // })
-
-mongoose.connect("mongodb+srv://admin:admin123@backenddb.pmao1jb.mongodb.net/node-api?retryWrites=true&w=majority&appName=backendDB")
-    .then(() => {
-        console.log("connected to database");
-        app.listen(3000,()=>{
-        console.log("Server is running on port 3000")
-        })
-    })
-    .catch(() => {
-        console.log("not connected to database")
-    })
-
 
 
 
